@@ -4,7 +4,8 @@ const initialState = {
     },
     playlists: [],
     albums: [],
-    followArtists: []
+    followArtists: [],
+    album: null
 };
 
 export default initialState;

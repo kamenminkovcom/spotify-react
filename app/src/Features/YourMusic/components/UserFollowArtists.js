@@ -11,6 +11,7 @@ class UserFollowArtists extends React.Component {
 
     componentWillMount() {
         this.props.actions.getFollowArtists();
+        console.log(this.props)
     }
 
     render() {

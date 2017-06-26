@@ -6,7 +6,7 @@ let Albums = (props) => {
     let albums = props.albums;
     return (
         <div className="albums">
-            {albums.map((p, i) => <Album name={p.name} artists={p.artists} images={p.images} key={p.name + i} />)}
+            {albums.map((p, i) => <Album name={p.name} artists={p.artists} images={p.images} id={p.id} key={p.name + i} />)}
         </div>
     )
 };

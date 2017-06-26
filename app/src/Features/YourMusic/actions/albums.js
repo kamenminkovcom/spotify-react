@@ -13,7 +13,7 @@ export function getUserSavedAlbums() {
         UserService.getSavedAlbums()
             .then(res => {
                 res.map(a => {
-                    let album = new AlbumModel(a.album.name, a.album.artists,a.album.images);
+                    let album = new AlbumModel(a.album.name, a.album.artists,a.album.images, a.album.id);
                     albums.push(album);
                 });
                 dispatch(loadAlbums(albums));

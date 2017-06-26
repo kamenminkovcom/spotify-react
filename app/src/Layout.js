@@ -4,6 +4,7 @@ import Browse from './Features/Browse/Browse';
 import Search from './Features/Search/Search';
 import YourMusic from './Features/YourMusic/YourMusic';
 import CallbackSpotify from './Features/Login/callbackSpotify';
+import AlbumPage from './Features/Details/Album/AlbumPage';
 import UserPlaylists from './Features/YourMusic/components/UserPlaylists';
 import layout from './layout.css';
 
@@ -14,6 +15,7 @@ const Layout = () => (
             <Route path='/search' component={Search} />
             <Route path='/your-music' component={YourMusic} />
             <Route path='/callbackSpotify' component={CallbackSpotify} />
+            <Route path='/album/:id' component={AlbumPage} />
         </Switch>
     </main>
 );
