@@ -6,7 +6,6 @@ import {syncHistoryWithStore} from 'react-router-redux';
 import {BrowserRouter} from 'react-router-dom';
 import configureStore from './store/configureStore';
 import App from './containers/App';
-import {loadAlbums} from './actions/loadAlbums' 
 
 const store = configureStore();
 const history = syncHistoryWithStore(createBrowserHistory(), store);

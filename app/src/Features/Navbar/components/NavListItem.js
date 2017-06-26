@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import navbar from './navbar.css';
+import navbar from '../navbar.css';
 
 
 let NavListItem = (props) => {

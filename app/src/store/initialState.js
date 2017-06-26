@@ -1,5 +1,10 @@
 const initialState = {
-    albums: []
-}
+    users: {
+      albums: []
+    },
+    playlists: [],
+    albums: [],
+    followArtists: []
+};
 
 export default initialState;

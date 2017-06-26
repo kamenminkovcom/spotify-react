@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StaticLinksGroup from './StaticLinksGroup';
+import StaticLinksGroup from './components/StaticLinksGroup';
 
 class Navbar extends React.Component {
     constructor(props) {

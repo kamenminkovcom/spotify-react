@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import UserService from '../../services/userService';
-import Utils from '../../utils/utils';
-import AlbumModel from '../../utils/Models/albumModel';
-import Playlists from '../../components/common/Playlists';
-import Navbar from './Navbar.js';
-import UserPlaylists from './UserPlaylists.js';
-import Albums from './Albums.js';
-import Artists from './Artists.js';
+import LocalNavbar from './components/LocalNavbar.js';
+import UserPlaylists from './components/UserPlaylists.js';
+import UserSavedAlbums from './components/UserSavedAlbums.js';
+import UserFollowArtists from './components/UserFollowArtists.js';
+import yourMusic from './YourMusic.css';
 
 class YourMusic extends React.Component {
     constructor(props, context) {
@@ -19,11 +14,11 @@ class YourMusic extends React.Component {
     render() {
         return (
             <div>
-                <Navbar />
+                <LocalNavbar />
                 <Switch>
                     <Route path='/your-music/playlists' component={UserPlaylists} />
-                    <Route path='/your-music/albums' component={Albums} />
-                    <Route path='/your-music/artists' component={Artists} />
+                    <Route path='/your-music/albums' component={UserSavedAlbums} />
+                    <Route path='/your-music/artists' component={UserFollowArtists} />
                 </Switch>
             </div>
         );

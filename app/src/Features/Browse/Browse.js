@@ -4,8 +4,7 @@ import { bindActionCreators } from 'redux';
 import AlbumContainer from './AlbumContainer';
 import UserService from '../../services/userService';
 import Utils from '../../utils/utils';
-import AlbumModel from '../../utils/Models/albumModel';
-import Playlists from '../../components/common/Playlists';
+import Playlists from '../../components/common/Playlists/Playlists';
 
 class Browse extends React.Component {
     constructor(props, context) {

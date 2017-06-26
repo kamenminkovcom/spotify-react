@@ -31,7 +31,8 @@ class Login extends React.Component {
             SPOTIFY_AUTH_URL + "?client_id=" +
             SPOTIFY_CLIENT_ID + "&redirect_uri=" +
             encodeURIComponent(SPOTIFY_REDIRECT_URL) + "" +
-            "&response_type=" + SPOTIFY_RESPONSE_TYPE;
+            "&response_type=" + SPOTIFY_RESPONSE_TYPE + "" +
+            "&scope=user-library-read user-follow-read";
 
         let width = 450,
             height = 730,

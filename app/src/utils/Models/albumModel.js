@@ -1,7 +1,8 @@
 class AlbumModel {
-    constructor(name, username) {
+    constructor(name, artists, images) {
         this.name = name;
-        this.username = username;
+        this.artists = artists;
+        this.images = images;
     }
 }
 

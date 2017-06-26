@@ -4,9 +4,7 @@ import Browse from './Features/Browse/Browse';
 import Search from './Features/Search/Search';
 import YourMusic from './Features/YourMusic/YourMusic';
 import CallbackSpotify from './Features/Login/callbackSpotify';
-import UserPlaylists from './Features/YourMusic/UserPlaylists';
-import Albums from './Features/YourMusic/Albums';
-import Artists from './Features/YourMusic/Artists';
+import UserPlaylists from './Features/YourMusic/components/UserPlaylists';
 import layout from './layout.css';
 
 const Layout = () => (

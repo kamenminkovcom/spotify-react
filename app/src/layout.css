@@ -1,3 +1,6 @@
 .layout {
-    float: right;
+    height: 100vh;
+    padding: 24px 24px 95px;
+    width: 90%;
+    background-color: black; 
 }

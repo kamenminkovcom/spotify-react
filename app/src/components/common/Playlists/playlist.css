@@ -1,0 +1,20 @@
+.name-link,
+.username-link {
+    width: 100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.name-link {
+    color: #fff;
+}
+
+.username-link {
+    color: hsla(0,0%,100%,.5);
+}
+
+.playlist-default {
+   width: 200px;
+   height: 200px;
+}

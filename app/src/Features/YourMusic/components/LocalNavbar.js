@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
-let Navbar = (props) => {
+let LocalNavbar = (props) => {
     return(
-        <ul>
+        <ul className="local-navbar">
            <li><Link to="/your-music/playlists">Playlists</Link></li>
            <li><Link to="/your-music/albums">Albums</Link></li>
            <li><Link to="/your-music/artists">Artists</Link></li>
@@ -11,4 +11,4 @@ let Navbar = (props) => {
     )
 };
 
-export default Navbar;
+export default LocalNavbar;
