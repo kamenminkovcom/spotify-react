@@ -1,6 +1,6 @@
 import actionTypes from '../../../actions/actionTypes';
 import UserService from '../../../services/userService';
-import AlbumModel from '../../../utils/Models/AlbumModel';
+import CoverArtModel from '../../../utils/Models/CoverArtModel';
 
 export const loadAlbums = albums => ({
     type: actionTypes.LOAD_ALBUMS,
@@ -13,7 +13,9 @@ export function getUserSavedAlbums() {
         UserService.getSavedAlbums()
             .then(res => {
                 res.map(a => {
-                    let album = new AlbumModel(a.album.name, a.album.artists,a.album.images, a.album.id);
+                    let imageUrl = a.album.images.length === 0 ? '' : a.album.images[0].url;
+                    let navigationPath = `/album/${a.album.id}`;
+                    let album = new CoverArtModel(a.album.name, a.album.artists,imageUrl, a.album.id, navigationPath);
                     albums.push(album);
                 });
                 dispatch(loadAlbums(albums));

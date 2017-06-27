@@ -14,7 +14,9 @@ export function getFollowArtists() {
         UserService.getFollowedArtists()
             .then(res => {
                 res.map(a => {
-                    let artist = new ArtistModel(a.id, a.name, a.images, a.genres);
+                    let imageUrl = a.images[0].url;
+                    let detailsNavigation = `/artist/${a.id}`;
+                    let artist = new ArtistModel(a.id, a.name, imageUrl, detailsNavigation, a.genres);
                     artists.push(artist);
                 });
                 dispatch(loadFollowArtists(artists));

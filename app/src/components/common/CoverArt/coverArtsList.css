@@ -1,0 +1,33 @@
+.cover-arts-list {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: flex-start;
+}
+
+.cover-art-default {
+    margin-left: 8px;
+    margin-right: 8px;
+    width: 200px;
+    height: 200px;
+}
+
+.name-link,
+.owner-name-link {
+    width: 100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.name-link {
+    color: #fff;
+}
+
+.owner-name-link {
+    color: hsla(0,0%,100%,.5);
+}
+
+.cover-art-image {
+    width: 100%;
+    height: 100%;
+}

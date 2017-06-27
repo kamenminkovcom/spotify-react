@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/followArtists';
@@ -11,7 +11,6 @@ class UserFollowArtists extends React.Component {
 
     componentWillMount() {
         this.props.actions.getFollowArtists();
-        console.log(this.props)
     }
 
     render() {

@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import Playlists from '../../../components/common/Playlists/Playlists';
+import CoverArtsList from '../../../components/common/CoverArt/CoverArtsList';
 import * as actions from '../actions/playlists';
 
 class YourPlaylists extends React.Component {
@@ -16,7 +16,7 @@ class YourPlaylists extends React.Component {
     render() {
         return (
             <div>
-                <Playlists albums={this.props.playlists}/>
+                <CoverArtsList coverArts={this.props.playlists}/>
             </div>
         );
     }

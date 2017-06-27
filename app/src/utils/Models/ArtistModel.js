@@ -1,8 +1,9 @@
 class ArtistModel {
-    constructor(id, name, images, genres) {
+    constructor(id, name, imageUrl, detailsNavigation,genres) {
         this.id = id;
         this.name = name;
-        this.images = images;
+        this.imageUrl = imageUrl;
+        this.detailsNavigation = detailsNavigation;
         this.genres = genres;
     }
 }

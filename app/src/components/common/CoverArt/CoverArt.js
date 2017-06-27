@@ -1,26 +1,29 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Owners from './Owners';
 
-let Artist = (props) => {
-    return(
-        <div className='artist-default'>
+const CoverArt = (props) => {
+    return (
+        <div className='cover-art-default'>
             <Link to={props.detailsNavigation}>
                 <div>
-                    <img className="artist-image" src={props.imageUrl} alt="" />
+                    <img className="cover-art-image" src={props.imageUrl} alt=""/>
                 </div>
             </Link>
             <Link to={props.detailsNavigation} className="name-link">
                 {props.name}
             </Link>
+            {props.owners ? <Owners owners={props.owners}/> : null}
         </div>
     )
 };
 
-Artist.propTypes = {
+CoverArt.propTypes = {
     detailsNavigation: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    owners: PropTypes.array
 };
 
-export default Artist;
+export default CoverArt;

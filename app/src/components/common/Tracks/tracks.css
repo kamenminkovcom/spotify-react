@@ -1,0 +1,27 @@
+.track-default {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+}
+
+.track-name {
+    width: 55%;
+}
+.track-duration {
+   width: 40%;
+}
+
+.track-index {
+    width:5%;
+}
+
+.tracks-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.empty-list-message {
+    color: #fff;
+    font-size: 40px;
+}
+

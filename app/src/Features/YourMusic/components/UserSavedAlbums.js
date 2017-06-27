@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Utils from '../../../utils/utils';
-import Albums from '../../../components/common/Albums/Albums';
+import CoverArtsList from '../../../components/common/CoverArt/CoverArtsList';
 import * as actions from '../actions/albums';
 
 
@@ -18,7 +17,7 @@ class UserSavedAlbums extends React.Component {
     render() {
         return (
             <div>
-                <Albums albums={this.props.albums} />
+                <CoverArtsList coverArts={this.props.albums} />
             </div>
         )
     }

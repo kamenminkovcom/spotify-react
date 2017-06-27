@@ -1,7 +1,11 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import Tracks from '../../../components/common/Tracks/Tracks';
 import * as actions from './actions/album';
+import Loading from '../../../components/common/Loading/Loading';
+import CoverArt from '../../../components/common/CoverArt/CoverArt';
+import albumPage from './albumPage.css';
 
 class AlbumPage extends React.Component {
     constructor(props) {
@@ -14,14 +18,17 @@ class AlbumPage extends React.Component {
     }
 
     render() {
-        return(
+        if (this.props.album === null) {
+            return (
+                <Loading/>
+            )
+        }
+        const detailsNavigation = `/album/${this.props.album.id}`;
+        const imageUrl = this.props.album.images[0].url;
+        return (
             <div className="album-details">
-                <div>
-
-                </div>
-                <div className="album-songs">
-
-                </div>
+                <CoverArt detailsNavigation={detailsNavigation} imageUrl={imageUrl} name={this.props.album.name} owners={this.props.album.artists}/>
+                <Tracks tracks={this.props.album.tracks}/>
             </div>
         )
     }

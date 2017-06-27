@@ -1,0 +1,12 @@
+.album-details {
+    display: flex;
+    flex-direction: row;
+}
+
+.album-default {
+    width: 30%;
+}
+
+.tracks-container {
+    width: 70%;
+}
