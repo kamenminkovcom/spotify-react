@@ -8,14 +8,14 @@ class ArtistService {
     static getArtistAlbums(id) {
         const url = `${baseUrl}/${id}/albums`;
         const token = Utils.getAccessToken();
-        axios({
+        return axios({
             method: 'GET',
             url: url,
             headers: {
                 'Authorization': 'Bearer ' + token
             }
         })
-            .then(res => res.data)
+            .then(res => res.data.items)
             .catch(err => console.log(err));
     }
 }

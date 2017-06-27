@@ -5,6 +5,7 @@ import albums from '../Features/YourMusic/reducers/albumsReducer';
 import followArtists from '../Features/YourMusic/reducers/followArtistsReducer';
 import album from '../Features/Details/Album/reducers/albumReducer';
 import playlist from '../Features/Details/Playlist/reducers/playlistReducer';
+import artist from '../Features/Details/Artist/reducers/artistReducer';
 
 const rootReducer = combineReducers({
     routing,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
     albums,
     followArtists,
     album,
-    playlist
+    playlist,
+    artist
 });
 
 export default rootReducer;
