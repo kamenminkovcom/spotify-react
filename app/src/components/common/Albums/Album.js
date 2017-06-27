@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import album from './album.css';
 
 let Album = (props) => {
-    let albumNavigation = `album/${props.id}`;
+    let albumNavigation = `/album/${props.id}`;
     return(
         <div className='album-default'>
             <Link to={albumNavigation}>
