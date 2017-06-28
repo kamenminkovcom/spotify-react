@@ -16,7 +16,9 @@ export function getArtistAlbums(id) {
                             let imageUrl = a.images.length === 0 ? '' : a.images[0].url;
                             let navigationPath = `/album/${a.id}`;
                             let album = new CoverArtModel(a.name, a.artists,imageUrl, a.id, navigationPath);
-                            albums.push(album);
+                            if (!albums.some(x => x.name === album.name)) {
+                                albums.push(album);
+                            }
                         });
                         dispatch(loadArtistAlbums(albums));
                     })
