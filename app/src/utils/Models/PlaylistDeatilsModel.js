@@ -3,7 +3,7 @@ class PlaylistDeatilsModel {
         this.id = id;
         this.name = name;
         this.images = images;
-        this.tracks = tracks.items;
+        this.tracks = tracks;
         this.owner = owner;
     }
 }

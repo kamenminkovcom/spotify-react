@@ -6,6 +6,8 @@ import followArtists from '../Features/YourMusic/reducers/followArtistsReducer';
 import album from '../Features/Details/Album/reducers/albumReducer';
 import playlist from '../Features/Details/Playlist/reducers/playlistReducer';
 import artist from '../Features/Details/Artist/reducers/artistReducer';
+import browse from '../Features/Browse/reducers/browseReducer';
+import view from '../Features/Details/View/reducers/viewReducer';
 
 const rootReducer = combineReducers({
     routing,
@@ -14,7 +16,9 @@ const rootReducer = combineReducers({
     followArtists,
     album,
     playlist,
-    artist
+    artist,
+    browse,
+    view
 });
 
 export default rootReducer;

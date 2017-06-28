@@ -9,11 +9,12 @@ export const loadPlaylist = playlist => ({
 });
 
 
-export function getPlaylist(id) {
+export function getPlaylist(id, username) {
     return dispatch => {
-        PlaylistService.getPlaylistDeatils(id)
+        PlaylistService.getPlaylistDeatils(id, username)
             .then(res => {
-                let playlist = new PlaylistDetailsModel(res.id, res.name, res.images, res.tracks, res.owner);
+                let tracks = res.tracks.items.map(x => x.track);
+                let playlist = new PlaylistDetailsModel(res.id, res.name, res.images,tracks, res.owner);
                 dispatch(loadPlaylist(playlist));
             })
             .catch(err => console.log(err));

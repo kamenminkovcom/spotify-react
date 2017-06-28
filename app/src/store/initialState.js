@@ -7,6 +7,14 @@ const initialState = {
     artist: {
         albums: [],
         singles: []
+    },
+    browse: {
+        newReleases: [],
+        genres: [],
+        featured: []
+    },
+    view: {
+        playlists: []
     }
 };
 

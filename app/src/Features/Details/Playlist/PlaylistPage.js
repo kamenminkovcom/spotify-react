@@ -16,7 +16,8 @@ class PlaylistPage extends React.Component {
 
     componentWillMount() {
         let playlistId = this.props.match.params.id;
-        this.props.actions.getPlaylist(playlistId);
+        let username = this.props.match.params.username;
+        this.props.actions.getPlaylist(playlistId, username);
     }
 
     render() {

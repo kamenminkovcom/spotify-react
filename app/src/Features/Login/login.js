@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-//import login from './login.css';
+import login from './login.css';
 
 class Login extends React.Component {
     constructor() {
@@ -75,7 +75,7 @@ class Login extends React.Component {
     render() {
         return(
             <div className='login-page'>
-                <button onClick={this.handleLogin}>Login</button>
+                <button className="login-button" onClick={this.handleLogin}>Login</button>
             </div>
         )
     }

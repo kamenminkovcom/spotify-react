@@ -8,7 +8,8 @@ export const loadArtistAlbums = albums => ({
 });
 
 export function getArtistAlbums(id) {
-    let albums = []
+    let albums = [];
+    //TODO
     return dispatch => {
         ArtistService.getArtistAlbums(id)
                     .then(res => {
@@ -25,6 +26,3 @@ export function getArtistAlbums(id) {
                      .catch(err => console.log(err));
     }
 }
-
-
-

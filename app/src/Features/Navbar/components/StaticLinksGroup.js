@@ -9,10 +9,10 @@ let StaticLinksGroup = () => {
             </div>
             <div className="nav-group">
                 <div>
-                     <NavListItem role='Browse' navigation='/browse'/>
+                     <NavListItem role='Browse' navigation='/browse/featured'/>
                 </div>
                 <div>
-                    <NavListItem role='Your Music' navigation='/your-music'/>
+                    <NavListItem role='Your Music' navigation='/your-music/playlists'/>
                 </div>
             </div>
         </div>

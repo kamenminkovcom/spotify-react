@@ -1,9 +1,9 @@
 import React  from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import AlbumContainer from './AlbumContainer';
-import UserService from '../../services/userService';
-import Utils from '../../utils/utils';
+import { Switch, Route } from 'react-router-dom';
+import LocalNavbar from '../../components/common/LocalNavbar';
+import FeaturedPlaylist from './components/FeaturedPlaylists';
+import Genres from './components/Genres';
+import NewReleases from './components/NewReleases';
 
 
 class Browse extends React.Component {
@@ -12,23 +12,22 @@ class Browse extends React.Component {
 
     }
 
-    componentDidMount() {
+    componentWillMount() {
 
     }
 
     render() {
         return (
-            <div></div>
+            <div>
+                <LocalNavbar componentType={'browse'} roles={['featured', 'genres', 'new releases']}/>
+                <Switch>
+                    <Route path='/browse/featured' component={FeaturedPlaylist} />
+                    <Route path='/browse/genres' component={Genres} />
+                    <Route path='/browse/newreleases' component={NewReleases} />
+                </Switch>
+            </div>
         );
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        albums: state.albums
-    }
-};
-
-
-
-export default connect(mapStateToProps)(Browse);
+export default Browse;
