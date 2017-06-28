@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import CoverArtsList from '../../../components/common/CoverArt/CoverArtsList';
 import * as actions from './actions/view';
+import Heading from '../../../components/common/Heading/Heading';
 
 class View extends React.Component {
     constructor(props, context) {
@@ -17,6 +18,7 @@ class View extends React.Component {
     render() {
         return (
             <div>
+                <Heading text={'Popular Playlists'}/>
                 <CoverArtsList coverArts={this.props.view.playlists}/>
             </div>
         );

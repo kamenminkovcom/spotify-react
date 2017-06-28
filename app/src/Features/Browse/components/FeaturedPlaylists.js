@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import CoverArtsList from '../../../components/common/CoverArt/CoverArtsList';
 import * as actions from '../actions/browse';
+import Heading from '../../../components/common/Heading/Heading';
 
 class FeaturedPlaylists extends React.Component {
     constructor(props, context) {
@@ -16,6 +17,7 @@ class FeaturedPlaylists extends React.Component {
     render() {
         return (
             <div>
+                <Heading text={'New Releases'}/>
                 <CoverArtsList coverArts={this.props.browse.featured}/>
             </div>
         );

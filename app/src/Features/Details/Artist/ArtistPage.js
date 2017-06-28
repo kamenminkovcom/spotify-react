@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import * as actions from './actions/artist';
 import Loading from '../../../components/common/Loading/Loading';
 import CoverArtsList from '../../../components/common/CoverArt/CoverArtsList';
+import Heading from '../../../components/common/Heading/Heading';
 
 class ArtistPage extends React.Component {
     constructor(props) {
@@ -23,6 +24,7 @@ class ArtistPage extends React.Component {
         }
         return(
             <div>
+                <Heading text={'Albums'}/>
                 <CoverArtsList coverArts={this.props.artist.albums}/>
             </div>
         )
