@@ -4,6 +4,7 @@ import CoverArtModel from '../../../../utils/Models/CoverArtModel';
 import constants from '../../../../utils/constants';
 
 const defaultCoverUrl = constants.defaultPictureUrl;
+const defaultProfilePicture = `http://listen.turkishmusic.com/assets/images/default_avatar.jpg`;
 
 export const loadProfile = data => ({
     type: actionTypes.LOAD_USER_PROFILE,
@@ -23,7 +24,7 @@ export function getUserProfileData(userId) {
                         return new CoverArtModel(x.name, owners, imageUrl, x.id, detailsNavigation);
                     });
                     let username = userDetails.display_name ? userDetails.display_name : userDetails.id;
-                    let imageUrl = userDetails.images.length > 0 ?  userDetails.images[0].url : defaultCoverUrl;
+                    let imageUrl = userDetails.images.length > 0 ?  userDetails.images[0].url : defaultProfilePicture;
                     let data = {
                         playlists,
                         profileData: {username, imageUrl}
