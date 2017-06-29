@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/followArtists';
+import * as actions from '../actions/user';
 import Artists from '../../../components/common/Artists/Artists';
 
 class UserFollowArtists extends React.Component {
@@ -16,7 +16,7 @@ class UserFollowArtists extends React.Component {
     render() {
         return(
             <div>
-                <Artists artists={this.props.followArtists}/>
+                <Artists artists={this.props.user.followArtists}/>
             </div>
         )
     }
@@ -24,7 +24,7 @@ class UserFollowArtists extends React.Component {
 
 const mapStateToProps = (state, ownProps) => (
     {
-        followArtists: state.followArtists
+        user: state.user
     }
 );
 

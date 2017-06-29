@@ -12,7 +12,11 @@ export function getAlbum(id) {
 
         AlbumService.getAlbumDetails(id)
             .then(res => {
-                let album = new AlbumDetailsModel(res.id, res.name, res.artists, res.genres, res.images, res.tracks);
+                let artists = res.artists.map(x => ({
+                    name: x.name,
+                    detailsNavigation: `/artist/${x.id}`
+                }));
+                let album = new AlbumDetailsModel(res.id, res.name, artists, res.genres, res.images, res.tracks);
                 dispatch(loadAlbum(album));
             })
             .catch(err => console.log(err));

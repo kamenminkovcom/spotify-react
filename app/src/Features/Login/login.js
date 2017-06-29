@@ -5,10 +5,6 @@ import login from './login.css';
 class Login extends React.Component {
     constructor() {
         super();
-        this.props = {
-
-        };
-
         this.bindEventHandlers();
     }
 
@@ -54,7 +50,7 @@ class Login extends React.Component {
 
         let callback = function(token){
             localStorage.setItem('spotify_token',token);
-            this.setSpotifyDetails(token);
+           // this.setSpotifyDetails(token);
         };
     }
 

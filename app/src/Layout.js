@@ -9,6 +9,7 @@ import AlbumPage from './Features/Details/Album/AlbumPage';
 import PlaylistPage from './Features/Details/Playlist/PlaylistPage';
 import ArtistPage from './Features/Details/Artist/ArtistPage';
 import View from './Features/Details/View/View';
+import UserProfile from './Features/Details/User/UserProfile';
 import PrivateRoute from './components/common/PrivateRoute';
 import layout from './layout.css';
 
@@ -24,6 +25,7 @@ const Layout = () => (
             <PrivateRoute path='/user/:username/playlist/:id' component={PlaylistPage}/>
             <PrivateRoute path='/artist/:id' component={ArtistPage}/>
             <PrivateRoute path='/view/:id' component={View}/>
+            <PrivateRoute path='/user/:id' component={UserProfile}/>
         </Switch>
     </main>
 );

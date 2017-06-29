@@ -25,14 +25,12 @@ export const loadNewReleases = newReleases => ({
 
 export function getFeaturedPlaylists() {
     return dispatch => {
-        let featured = [];
         PlaylistService.getFeaturedPlaylists()
             .then(res => {
-                res.map(p => {
+                let featured = res.map(p => {
                     let imageUrl = p.images.length === 0 ? defaultCoverUrl : p.images[0].url;
                     let detailsNavigation = `/user/${p.owner.id}/playlist/${p.id}`;
-                    let playlist = new CoverArtModel(p.name, null, imageUrl, p.id, detailsNavigation);
-                    featured.push(playlist);
+                    return new CoverArtModel(p.name, null, imageUrl, p.id, detailsNavigation);
                 });
                 dispatch(loadFeatured(featured));
             })
@@ -43,14 +41,12 @@ export function getFeaturedPlaylists() {
 
 export function getGenres() {
     return dispatch => {
-        let genres = [];
         GenresService.getAll()
             .then(res => {
-                res.map(g => {
+                let genres = res.map(g => {
                     let imageUrl = g.icons[0].url;
                     let detailsNavigation = `/view/${g.id}`;
-                    let genre = new CoverArtModel(g.name, null, imageUrl, g.id, detailsNavigation);
-                    genres.push(genre);
+                    return new CoverArtModel(g.name, null, imageUrl, g.id, detailsNavigation);
                 });
                 dispatch(loadGenres(genres));
             })
@@ -60,14 +56,16 @@ export function getGenres() {
 
 export function getNewReleases() {
     return dispatch => {
-        let newReleases = [];
         AlbumService.getNewReleases()
             .then(res => {
-                res.map(a => {
+                let newReleases = res.map(a => {
                     let imageUrl = a.images.length === 0 ? defaultCoverUrl : a.images[0].url;
                     let detailsNavigation = `/album/${a.id}`;
-                    let album = new CoverArtModel(a.name, a.artists, imageUrl, a.id, detailsNavigation);
-                    newReleases.push(album);
+                    let artists = a.artists.map(x => ({
+                        name: x.name,
+                        detailsNavigation: `/artist/${x.id}`
+                    }));
+                    return new CoverArtModel(a.name, artists, imageUrl, a.id, detailsNavigation);
                 });
                 dispatch(loadNewReleases(newReleases));
             })

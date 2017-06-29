@@ -28,7 +28,7 @@ class PlaylistPage extends React.Component {
         }
         const imageUrl = this.props.playlist.images.length === 0 ? defaultImageUrl : this.props.playlist.images[0].url;
         const detailsnavigartion = `/user/${this.props.playlist.owner.id}/playlist/${this.props.playlist.id}`;
-        const owner = {name: this.props.playlist.owner.id};
+        const owner = {name: this.props.playlist.owner.id, detailsNavigation: `/user/${this.props.playlist.owner.id}`};
         return(
             <div className="playlist-details">
                 <CoverArt name={this.props.playlist.name} imageUrl={imageUrl} detailsNavigation={detailsnavigartion} owners={[owner]}/>

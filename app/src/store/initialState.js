@@ -1,7 +1,4 @@
 const initialState = {
-    playlists: [],
-    albums: [],
-    followArtists: [],
     album: null,
     playlist: null,
     artist: {
@@ -14,6 +11,12 @@ const initialState = {
         featured: []
     },
     view: {
+        playlists: []
+    },
+    user: {
+        details: null,
+        followArtists: [],
+        albums: [],
         playlists: []
     }
 };

@@ -1,5 +1,6 @@
 import Service from './service';
 import Utils from '../utils/utils';
+import axios from 'axios';
 
 const baseURL = 'https://api.spotify.com/v1/users';
 const baseUserURL = 'https://api.spotify.com/v1/me';
@@ -27,6 +28,18 @@ class UserService {
         return Service.getRequest(url, token)
             .then(res => res.data.artists.items)
             .catch(err => console.log(err));
+    }
+
+    static getUserProfileData(userId) {
+        let playlistsUrl = `${baseURL}/${userId}/playlists`;
+        let userProfileUrl = `https://api.spotify.com/v1/users/${userId}`;
+        let token = Utils.getAccessToken();
+        return axios
+            .all([Service.getRequest(playlistsUrl, token), Service.getRequest(userProfileUrl, token)])
+            .then(([playlists, profileData]) => (
+                [playlists.data.items, profileData.data]
+            ));
+
     }
 }
 

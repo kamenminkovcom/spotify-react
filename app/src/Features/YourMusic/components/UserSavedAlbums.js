@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CoverArtsList from '../../../components/common/CoverArt/CoverArtsList';
-import * as actions from '../actions/albums';
+import * as actions from '../actions/user';
 
 
 class UserSavedAlbums extends React.Component {
@@ -17,7 +17,7 @@ class UserSavedAlbums extends React.Component {
     render() {
         return (
             <div>
-                <CoverArtsList coverArts={this.props.albums} />
+                <CoverArtsList coverArts={this.props.user.albums} />
             </div>
         )
     }
@@ -25,7 +25,7 @@ class UserSavedAlbums extends React.Component {
 
 const mapStateToProps = (state, ownProps) => (
     {
-        albums: state.albums
+        user: state.user
     }
 );
 
