@@ -1,6 +1,7 @@
 .layout {
-    height: 100vh;
+    height: 100%;
     padding: 24px 24px 95px;
-    width: 90%;
-    background-color: black; 
+    width: 100%;
+    background-attachment: fixed;
+    margin-left:180px;
 }

@@ -7,7 +7,7 @@ let LocalNavbar = ({roles, componentType}) => {
         <ul className="local-navbar">
             {roles.map(r =>  {
                 let urlSegment = r.split(/\s+/).join('');
-                return <li><Link to={`/${componentType}/${urlSegment}`}>{r}</Link></li>
+                return <li key={r}><Link to={`/${componentType}/${urlSegment}`}>{r}</Link></li>
             })}
         </ul>
     )

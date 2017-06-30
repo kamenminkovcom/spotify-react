@@ -12,10 +12,6 @@ class Browse extends React.Component {
 
     }
 
-    componentWillMount() {
-
-    }
-
     render() {
         return (
             <div>

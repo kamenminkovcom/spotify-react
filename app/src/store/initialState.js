@@ -18,6 +18,10 @@ const initialState = {
         followArtists: [],
         albums: [],
         playlists: []
+    },
+    search: {
+        recentSearches: new Map(),
+
     }
 };
 

@@ -1,0 +1,26 @@
+.search-input-container {
+     position: relative;
+     background-color: #242424;
+     padding: 1.5em 2em;
+}
+
+.search-input {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: #1ed760;
+    font-weight: 700;
+    font-size: 62px;
+    line-height: 1.2;
+    text-shadow: 0 0 0 #fff;
+    -webkit-text-fill-color: transparent;
+}
+
+input::placeholder {
+    color: #a0a0a0;
+}
+
+h4 {
+    color: #ffffff;
+}

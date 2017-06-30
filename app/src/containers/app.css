@@ -7,4 +7,7 @@
 body {
     margin: 0;
     font-family: spotify-circular,Helvetica,Arial,sans-serif;
+    background: no-repeat center center fixed;
+    background-image: linear-gradient(rgb(56, 76, 97), rgb(5, 7, 9) 85%);
+    background-size: cover;
 }
