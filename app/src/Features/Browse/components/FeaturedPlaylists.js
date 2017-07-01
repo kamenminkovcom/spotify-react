@@ -2,27 +2,20 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import CoverArtsList from '../../../components/common/CoverArt/CoverArtsList';
+import coverArtsPresenter from '../../../components/HOC/coverArtsPresenter';
 import * as actions from '../actions/browse';
 import Heading from '../../../components/common/Heading/Heading';
 
-class FeaturedPlaylists extends React.Component {
-    constructor(props, context) {
-        super(props, context);
-    }
+let FeaturedPlaylists = (props) => (
+    <div>
+        <Heading text={'New Releases'}/>
+        <CoverArtsList coverArts={props.browse.featured}/>
+    </div>
+);
 
-    componentWillMount() {
-        this.props.actions.getFeaturedPlaylists();
-    }
-
-    render() {
-        return (
-            <div>
-                <Heading text={'New Releases'}/>
-                <CoverArtsList coverArts={this.props.browse.featured}/>
-            </div>
-        );
-    }
-}
+FeaturedPlaylists = coverArtsPresenter((props) => {
+    props.actions.getFeaturedPlaylists();
+})(FeaturedPlaylists);
 
 const mapStateToProps = (state, ownProps) => (
     {
