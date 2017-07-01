@@ -2,26 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CoverArtsList from '../../../components/common/CoverArt/CoverArtsList';
+import coverArtsPresenter from '../../../components/HOC/coverArtsPresenter';
 import * as actions from '../actions/user';
 
+let UserSavedAlbums = (props) => (
+    <div>
+        <CoverArtsList coverArts={props.user.albums} />
+    </div>
+);
 
-class UserSavedAlbums extends React.Component {
-    constructor(props, context) {
-        super(props, context);
-    }
-
-    componentWillMount() {
-        this.props.actions.getUserSavedAlbums();
-    }   
-
-    render() {
-        return (
-            <div>
-                <CoverArtsList coverArts={this.props.user.albums} />
-            </div>
-        )
-    }
-}
+UserSavedAlbums = coverArtsPresenter((props) => {
+    props.actions.getUserSavedAlbums();
+}, UserSavedAlbums);
 
 const mapStateToProps = (state, ownProps) => (
     {

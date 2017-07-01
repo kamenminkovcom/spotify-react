@@ -11,6 +11,7 @@ import ArtistPage from './Features/Details/Artist/ArtistPage';
 import View from './Features/Details/View/View';
 import UserProfile from './Features/Details/User/UserProfile';
 import PrivateRoute from './components/common/PrivateRoute';
+import Account from './Features/Account/Account';
 import layout from './layout.css';
 
 const Layout = () => (
@@ -19,13 +20,15 @@ const Layout = () => (
             <Route path='/login' exact component={Login} />
             <Route path='/callbackSpotify' component={CallbackSpotify} />
             <PrivateRoute path='/browse' component={Browse}/>
-            <PrivateRoute path='/search' component={Search}/>
+            <PrivateRoute path='/search' exact component={Search}/>
             <PrivateRoute path='/your-music' component={YourMusic}/>
             <PrivateRoute path='/album/:id' component={AlbumPage}/>
             <PrivateRoute path='/user/:username/playlist/:id' component={PlaylistPage}/>
             <PrivateRoute path='/artist/:id' component={ArtistPage}/>
             <PrivateRoute path='/view/:id' component={View}/>
             <PrivateRoute path='/user/:id' component={UserProfile}/>
+            <PrivateRoute path='/search/:id' component={Search}/>
+            <PrivateRoute path='/settings/account' component={Account}/>
         </Switch>
     </main>
 );

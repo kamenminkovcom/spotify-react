@@ -15,7 +15,7 @@ let NewReleases = (props) => (
 
 NewReleases = coverArtsPresenter((props) => {
     props.actions.getNewReleases();
-})(NewReleases);
+}, NewReleases);
 
 const mapStateToProps = (state, ownProps) => (
     {

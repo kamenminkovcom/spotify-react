@@ -2,25 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/user';
+import coverArtsPresenter from '../../../components/HOC/coverArtsPresenter';
 import Artists from '../../../components/common/Artists/Artists';
 
-class UserFollowArtists extends React.Component {
-    constructor(props, context) {
-        super(props, context);
-    }
+let UserFollowArtists = (props) => (
+    <div>
+        <Artists artists={props.user.followArtists}/>
+    </div>
+);
 
-    componentWillMount() {
-        this.props.actions.getFollowArtists();
-    }
-
-    render() {
-        return(
-            <div>
-                <Artists artists={this.props.user.followArtists}/>
-            </div>
-        )
-    }
-}
+UserFollowArtists = coverArtsPresenter((props) => {
+    props.actions.getFollowArtists();
+}, UserFollowArtists);
 
 const mapStateToProps = (state, ownProps) => (
     {

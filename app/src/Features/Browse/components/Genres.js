@@ -15,7 +15,7 @@ let Genres = (props) => (
 
 Genres = coverArtsPresenter((props) => {
     props.actions.getGenres();
-})(Genres);
+}, Genres);
 
 const mapStateToProps = (state, ownProps) => (
     {

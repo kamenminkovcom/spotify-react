@@ -15,7 +15,7 @@ let FeaturedPlaylists = (props) => (
 
 FeaturedPlaylists = coverArtsPresenter((props) => {
     props.actions.getFeaturedPlaylists();
-})(FeaturedPlaylists);
+}, FeaturedPlaylists);
 
 const mapStateToProps = (state, ownProps) => (
     {

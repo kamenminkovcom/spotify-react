@@ -1,6 +1,6 @@
 import React from 'react';
 
-const  coverArtsPresenter = (dataGetter) => (ComposedComponent) => {
+const  coverArtsPresenter = (dataGetter,ComposedComponent) => {
     return class extends React.Component {
         constructor(props) {
             super(props);
