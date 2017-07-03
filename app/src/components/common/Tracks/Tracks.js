@@ -1,6 +1,7 @@
 import React from 'react';
 import Track from './Track';
 import Utils from '../../../utils/utils';
+import PropTypes from 'prop-types';
 import tracks from './tracks.css';
 
 let Tracks = (props) => {
@@ -12,6 +13,10 @@ let Tracks = (props) => {
             </ul>
         </div>
     )
+};
+
+Tracks.propTypes = {
+   tracks: PropTypes.array.isRequired
 };
 
 export default Tracks;

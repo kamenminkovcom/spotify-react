@@ -5,8 +5,8 @@ import SearchInput from './components/SearchInput';
 import RecentSearchesList from './components/RecentSearchesList';
 import * as actions from './actions/search';
 import DataWrapper from './components/DataWrapper';
-import coverArtsPresenter from '../../components/HOC/coverArtsPresenter';
 import LocalNavbar from '../../components/common/LocalNavbar';
+import Loading from '../../components/common/Loading/Loading';
 import CoverArtsList from '../../components/common/CoverArt/CoverArtsList';
 import Tracks from '../../components/common/Tracks/Tracks';
 import Artists from '../../components/common/Artists/Artists';
@@ -19,15 +19,20 @@ class Search extends React.Component {
     }
 
     bindEventHandlers() {
-        this.inputOnChange = this.inputOnChange.bind(this);
         this.search = this.search.bind(this);
     }
 
-    inputOnChange(event) {
-        let value = event.target.value;
-        this.setState({searchValue: value});
+    componentWillUnmount() {
+        this.props.actions.clearSearchResults();
     }
 
+    componentWillUpdate(nextProps) {
+        const searchType = this.props.match.params.id;
+        this.props.actions.setSearchType(searchType);
+        if (this.props.search[searchType + 's'] === null) {
+            this.props.actions.makeRequest(searchType,nextProps.search.searchTerm);
+        }
+    }
 
     search(event) {
         let value = event.target.value;
@@ -36,39 +41,33 @@ class Search extends React.Component {
             content: value
         };
         this.props.actions.addSearch(search);
+        this.props.actions.setSearchTerm(value);
     }
 
 
     render() {
-        let DataContainer = null;
-        if (this.props.search.searchTerm === 'aa') {
+        let searchTerm = this.props.search.searchTerm;
+        let searchType = this.props.search.searchType;
+        if (searchTerm === '') {
             return (
                 <div>
-                    <SearchInput inputOnChange={this.inputOnChange} handleCursorOut={this.search}></SearchInput>
+                    <SearchInput handleCursorOut={this.search}></SearchInput>
                     <RecentSearchesList searches={[...this.props.search.recentSearches.values()].reverse()}/>
                 </div>
             )
         }
 
-        switch (this.props.match.params.id) {
-            case 'playlists':
-                this.props.actions.getPlaylists('playlist');
-                DataContainer = (
-                    <CoverArtsList coverArts={this.props.search.playlists}/>
-                );
-                break;
-            case 'albums':
-                break;
-            case 'artists':
-                break;
-            case 'tracks':
-                break;
+        if (this.props.search[searchType + 's'] === null) {
+           return(
+               <Loading/>
+           )
         }
+
         return(
             <div>
                 <SearchInput inputOnChange={this.inputOnChange} handleCursorOut={this.search}></SearchInput>
-                <LocalNavbar roles={['playlists', 'albums', 'artists']} componentType={'your-music'}/>
-                <DataContainer />
+                <LocalNavbar roles={['playlist', 'album', 'artist', 'track']} componentType={'search'}/>
+                <DataWrapper type={this.props.search.searchType} data={this.props.search[searchType + 's']}/>
             </div>
         )
     }

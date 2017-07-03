@@ -1,10 +1,24 @@
 import actionTypes from '../../../actions/actionTypes';
 import SearchService from  '../../../services/searchService';
-
+import Utils from '../../../utils/utils';
 
 export const addRecentSearch = search => ({
     type: actionTypes.ADD_RECENT_SEARCH,
     search
+});
+
+export const setSearchTerm = term => ({
+    type: actionTypes.SET_SEARCH_TERM,
+    term
+});
+
+export const clearSearchResults = () => ({
+    type: actionTypes.CLEAR_SEARCH_RESULTS
+});
+
+export const setSearchType = (searchType) => ({
+    type: actionTypes.SET_SEARCH_TYPE,
+    searchType
 });
 
 export const loadPlaylists = playlists => ({
@@ -13,7 +27,7 @@ export const loadPlaylists = playlists => ({
 });
 
 export const loadAlbums = albums => ({
-    type: actionTypes.LOAD_SEARCH_PLAYLISTS,
+    type: actionTypes.LOAD_SEARCH_ALBUMS,
     albums
 });
 
@@ -33,39 +47,29 @@ export function addSearch(search) {
     }
 }
 
-export function getPlaylists(searchTerm) {
+export function makeRequest(type, searchTerm) {
     return dispach => {
-        debugger
-        SearchService.getSearchItems(searchTerm)
+        SearchService.getSearchItems(type, searchTerm)
             .then(res => {
-               debugger
-            });
-    }
-}
-
-export function getAlbums(searchTerm) {
-    return dispach => {
-        SearchService.getSearchItems(searchTerm)
-            .then(res => {
-                debugger
-            });
-    }
-}
-
-export function getArtists(searchTerm) {
-    return dispach => {
-        SearchService.getSearchItems(searchTerm)
-            .then(res => {
-                debugger
-            });
-    }
-}
-
-export function getTracks(searchTerm) {
-    return dispach => {
-        SearchService.getSearchItems(searchTerm)
-            .then(res => {
-                debugger
-            });
+                switch (type) {
+                    case 'playlist':
+                        let playlists = Utils.parsePlaylists(res);
+                        dispach(loadPlaylists(playlists));
+                        return;
+                    case 'album':
+                        let albums = Utils.parseAlbums(res);
+                        dispach(loadAlbums(albums));
+                        return;
+                    case 'artist':
+                        let artists = Utils.parseArtists(res);
+                        dispach(loadArtists(artists));
+                        return;
+                    case 'track':
+                        let tracks = Utils.parseTracks(res);
+                        dispach(loadTracks(tracks));
+                        return;
+                }
+            })
+            .catch(err => console.log(err));
     }
 }

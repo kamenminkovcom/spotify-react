@@ -20,7 +20,6 @@ const Layout = () => (
             <Route path='/login' exact component={Login} />
             <Route path='/callbackSpotify' component={CallbackSpotify} />
             <PrivateRoute path='/browse' component={Browse}/>
-            <PrivateRoute path='/search' exact component={Search}/>
             <PrivateRoute path='/your-music' component={YourMusic}/>
             <PrivateRoute path='/album/:id' component={AlbumPage}/>
             <PrivateRoute path='/user/:username/playlist/:id' component={PlaylistPage}/>

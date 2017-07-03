@@ -5,7 +5,7 @@ const baseUrl = 'https://api.spotify.com/v1/search';
 
 class SearchService {
 
-    static getSearchItems(type) {
+    static getSearchItems(type, searchTerm) {
         const token = Utils.getAccessToken();
         return axios({
             method: 'GET',
@@ -14,6 +14,7 @@ class SearchService {
                 'Authorization': 'Bearer ' + token
             },
             params: {
+                q: searchTerm,
                 limit: 50,
                 type
             }
