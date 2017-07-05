@@ -12,6 +12,10 @@ class UserProfile extends React.Component {
         super(props);
     }
 
+    componentWillUnmount() {
+        this.props.actions.clearProfile();
+    }
+
     componentWillMount() {
         let userId = this.props.match.params.id;
         this.props.actions.getUserProfileData(userId);

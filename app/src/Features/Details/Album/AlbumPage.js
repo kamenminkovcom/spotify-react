@@ -12,6 +12,10 @@ class AlbumPage extends React.Component {
         super(props);
     }
 
+    componentWillUnmount() {
+        this.props.actions.clearAlbum();
+    }
+
     componentWillMount() {
         let albumId = this.props.match.params.id;
         this.props.actions.getAlbum(albumId);

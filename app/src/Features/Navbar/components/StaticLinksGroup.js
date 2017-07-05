@@ -5,18 +5,19 @@ import Utils from '../../../utils/utils';
 let StaticLinksGroup = () => {
     return(
         <div>
-            <div className="search-group">
+            <div className="search-group search-btn-default">
                 <NavListItem role='Search' navigation='/search/playlist'/>
+                <div className="icon-search"></div>
             </div>
             <div className="nav-group">
-                <div>
+                <div className="search-btn-default">
                      <NavListItem role="Browse" navigation="/browse/featured"/>
                 </div>
-                <div>
+                <div className="search-btn-default">
                     <NavListItem role="Your Music" navigation="/your-music/playlists"/>
                 </div>
             </div>
-            <div>
+            <div className="search-btn-default">
                 <NavListItem role={Utils.getCurrentUserId()} navigation="/settings/account"/>
             </div>
         </div>

@@ -26,7 +26,7 @@ class UserService {
         let url = `${baseUserURL}/following?type=artist`;
         let token = Utils.getAccessToken();
         return Service.getRequest(url, token)
-            .then(res => res.data.artists.items)
+            .then(res => res.data)
             .catch(err => console.log(err));
     }
 

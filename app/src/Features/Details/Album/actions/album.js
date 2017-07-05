@@ -7,6 +7,10 @@ export const loadAlbum = album => ({
     album
 });
 
+export const clearAlbum = () => ({
+   type: actionTypes.CLEAR_ALBUM
+});
+
 export function getAlbum(id) {
     return dispatch => {
 

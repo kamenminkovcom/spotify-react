@@ -7,6 +7,10 @@ export const loadArtistAlbums = albums => ({
     albums
 });
 
+export const clearArtist = () => ({
+    type: actionTypes.CLEAR_ARTIST
+});
+
 export function getArtistAlbums(id) {
     let albums = [];
     return dispatch => {

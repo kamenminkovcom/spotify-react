@@ -12,6 +12,8 @@ const userReducer = (state = initialState.user, action) => {
             return update(state, {followArtists: {$set: action.followArtists}});
         case actionTypes.LOAD_USER_PROFILE:
             return update(state, {details: {$set: action.data}});
+        case actionTypes.CLEAR_USER_PROFILE:
+            return initialState.user;
         default:
             return state;
     }

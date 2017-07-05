@@ -11,6 +11,10 @@ class ArtistPage extends React.Component {
         super(props);
     }
 
+    componentWillUnmount() {
+        this.props.actions.clearArtist();
+    }
+
     componentWillMount() {
         let artistId = this.props.match.params.id;
         this.props.actions.getArtistAlbums(artistId);

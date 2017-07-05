@@ -16,7 +16,7 @@ class AlbumService {
         const url = 'https://api.spotify.com/v1/browse/new-releases';
         let token = Utils.getAccessToken();
         return Service.getRequest(url, token)
-            .then(res => res.data.albums.items);
+            .then(res => res.data);
     }
 }
 

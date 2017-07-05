@@ -2,7 +2,6 @@ import actionTypes from '../../../actions/actionTypes';
 import UserService from '../../../services/userService';
 import CoverArtModel from '../../../utils/Models/CoverArtModel';
 import Utils from '../../../utils/utils';
-import ArtistModel from '../../../utils/Models/ArtistModel';
 import constants from '../../../utils/constants';
 
 const defaultCoverUrl = constants.defaultPictureUrl;
@@ -45,11 +44,7 @@ export function getFollowArtists() {
     return dispatch => {
         UserService.getFollowedArtists()
             .then(res => {
-                let artists = res.map(a => {
-                    let imageUrl = a.images[0].url;
-                    let detailsNavigation = `/artist/${a.id}`;
-                    return new ArtistModel(a.id, a.name, imageUrl, detailsNavigation, a.genres);
-                });
+                let artists = Utils.parseArtists(res);
                 dispatch(loadFollowArtists(artists));
             })
             .catch(err => console.log(err));

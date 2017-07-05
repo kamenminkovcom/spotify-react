@@ -17,8 +17,23 @@
     color: #1db954;
 }
 
-.search-group {
+.search-group,
+.nav-group {
     border-top: 1px solid hsla(0,0%,100%,.25);
+}
+
+.nav-group {
+    border-bottom: 1px solid hsla(0,0%,100%,.25);
+}
+
+.search-btn-default {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-search:before {
+    content: "\e900";
 }
 
 .navbar {

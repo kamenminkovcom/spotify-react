@@ -8,6 +8,9 @@ export const loadPlaylist = playlist => ({
     playlist
 });
 
+export const clearPlaylist = () => ({
+    type: actionTypes.CLEAR_PLAYLIST
+});
 
 export function getPlaylist(id, username) {
     return dispatch => {

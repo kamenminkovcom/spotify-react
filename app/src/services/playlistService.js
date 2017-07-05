@@ -16,14 +16,14 @@ class PlaylistService {
         const url = 'https://api.spotify.com/v1/browse/featured-playlists';
         let token = Utils.getAccessToken();
         return Service.getRequest(url,token)
-            .then(res => res.data.playlists.items);
+            .then(res => res.data);
     }
 
     static getGenrePlaylist(categoryId) {
         const url = `https://api.spotify.com/v1/browse/categories/${categoryId}/playlists`;
         let token = Utils.getAccessToken();
         return Service.getRequest(url, token)
-            .then(res=>res.data.playlists.items);
+            .then(res=>res.data);
     }
 }
 

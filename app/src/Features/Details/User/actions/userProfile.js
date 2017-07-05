@@ -11,6 +11,10 @@ export const loadProfile = data => ({
     data
 });
 
+export const clearProfile = () => ({
+    type: actionTypes.CLEAR_USER_PROFILE
+});
+
 export function getUserProfileData(userId) {
     return dispatch => {
         UserService.getUserProfileData(userId)

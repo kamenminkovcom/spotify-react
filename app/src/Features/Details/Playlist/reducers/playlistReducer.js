@@ -5,6 +5,8 @@ const playlistReducer = (state = initialState.playlist, action) => {
     switch (action.type) {
         case actionTypes.LOAD_PLAYLIST:
             return action.playlist;
+        case actionTypes.CLEAR_PLAYLIST:
+            return initialState.playlist;
         default:
             return state
     }

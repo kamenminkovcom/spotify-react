@@ -28,7 +28,7 @@ class CallbackSpotify extends React.Component {
         .then(res => {
             localStorage.setItem('userId', res.data.id);
             localStorage.setItem('spotifyToken', accessToken);
-            window.opener.location = '/your-music';
+            window.opener.location = '/your-music/playlists';
             window.close();
         })
         .catch(err => console.log(err)) 

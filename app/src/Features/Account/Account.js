@@ -21,7 +21,7 @@ class Account extends React.Component {
     render() {
        return (
            <div className="account-page">
-               <div>
+               <div className="logout-btn">
                    <Link to={'/login'} onClick={this.logout} className="logout-link">Logout</Link>
                </div>
            </div>
