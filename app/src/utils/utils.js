@@ -59,6 +59,19 @@ class Utils {
             return {name: t.name, duration_ms: t.duration_ms}
         })
     }
-}
+
+    static debounce (func, delay) {
+        let timer = null;
+
+        return function () {
+            let context = this;
+            let args = arguments;
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                func.apply(context, args);
+            }, delay);
+        };
+    }
+ }
 
 export default Utils;

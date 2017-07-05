@@ -6,7 +6,7 @@ let StaticLinksGroup = () => {
     return(
         <div>
             <div className="search-group">
-                <NavListItem role='Search' navigation='/search'/>
+                <NavListItem role='Search' navigation='/search/playlist'/>
             </div>
             <div className="nav-group">
                 <div>

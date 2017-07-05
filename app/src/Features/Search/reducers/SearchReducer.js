@@ -9,7 +9,10 @@ const searchReducer = (state = initialState.search, action) => {
           recentSearches.set(action.search.content, action.search);
           return update(state, {recentSearches: {$set: recentSearches }});
         case actionTypes.CLEAR_SEARCH_RESULTS:
-            return initialState.search;
+            let searches = state.recentSearches;
+            return update(initialState.search, {recentSearches: {$set: searches}});
+        case actionTypes.CHANGE_INPUT_READY:
+            return update(state, {isInputReady: {$set: action.isInputReady}});
         case actionTypes.SET_SEARCH_TERM:
             return update(state, {searchTerm: {$set: action.term}});
         case actionTypes.SET_SEARCH_TYPE:

@@ -7,6 +7,11 @@ export const addRecentSearch = search => ({
     search
 });
 
+export const changeInputReady = isInputReady => ({
+    type: actionTypes.CHANGE_INPUT_READY,
+    isInputReady
+});
+
 export const setSearchTerm = term => ({
     type: actionTypes.SET_SEARCH_TERM,
     term

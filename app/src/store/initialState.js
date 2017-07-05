@@ -23,10 +23,11 @@ const initialState = {
         recentSearches: new Map(),
         searchTerm: '',
         searchType: 'playlist',
-        tracks: null,
-        albums: null,
-        playlists: null,
-        artists: null
+        tracks: [],
+        albums: [],
+        playlists: [],
+        artists: [],
+        isInputReady: false
     }
 };
 
