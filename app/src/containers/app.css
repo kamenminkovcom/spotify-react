@@ -10,4 +10,5 @@ body {
     background: no-repeat center center fixed;
     background-image: linear-gradient(rgb(56, 76, 97), rgb(5, 7, 9) 85%);
     background-size: cover;
+    overflow-x: hidden;
 }

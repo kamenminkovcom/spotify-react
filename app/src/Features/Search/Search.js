@@ -65,7 +65,7 @@ class Search extends React.Component {
         let searchType = this.props.search.searchType;
         if (searchTerm === '') {
             return (
-                <div>
+                <div className="search-default">
                     <SearchInput value={this.props.search.searchTerm} handleChange={this.callSearch}></SearchInput>
                     <RecentSearchesList searches={[...this.props.search.recentSearches.values()].reverse()} clickHandler={this.recentSearchEvent}/>
                 </div>
@@ -75,7 +75,7 @@ class Search extends React.Component {
         if (this.props.search.isInputReady) {
             let DataWrapper = null;
             return (
-                <div>
+                <div className="search-default">
                     <SearchInput value={this.props.search.searchTerm} handleChange={this.callSearch}></SearchInput>
                     <LocalNavbar roles={['playlist', 'album', 'artist', 'track']} componentType={'search'}
                                  clickHandler={this.searchDifferentType}/>
@@ -102,7 +102,7 @@ class Search extends React.Component {
         }
 
         return (
-            <div>
+            <div className="search-default">
                 <SearchInput value={this.props.search.searchTerm}
                              handleChange={this.callSearch}></SearchInput>
             </div>

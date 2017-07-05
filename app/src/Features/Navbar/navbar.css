@@ -22,8 +22,8 @@
     border-top: 1px solid hsla(0,0%,100%,.25);
 }
 
-.nav-group {
-    border-bottom: 1px solid hsla(0,0%,100%,.25);
+.search-group {
+    position: relative;
 }
 
 .search-btn-default {
@@ -32,8 +32,37 @@
     align-items: center;
 }
 
-.icon-search:before {
-    content: "\e900";
+.icon-container,
+.avatar-icon-container {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 80%;
+}
+
+.icon-container img,
+.avatar-icon-container img {
+    height: 100%;
+    width: 100%;
+}
+.account-btn {
+    position: absolute;
+    top: 83%;
+    width: 100%;
+}
+
+.avatar-icon-container img {
+    margin-left: -30px;
+}
+
+.spotify-logo-container {
+    height: 30px;
+    width: 30px;
+}
+
+.spotify-logo-container img {
+    height: 100%;
+    width: 100%;
 }
 
 .navbar {
