@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import localNavbar from './localNavbar.css';
 
 let LocalNavbar = ({roles, componentType, clickHandler, active}) => {
     return(

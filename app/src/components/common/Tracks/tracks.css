@@ -1,8 +1,35 @@
+.tracks-container {
+    width: 85%;
+}
+
+.tracks-result {
+    padding-left: 70px;
+}
+
 .track-default {
     color: #fff;
     display: flex;
     flex-direction: row;
-    height: 30px;
+    align-items: center;
+    justify-content: center;
+    height: 4.56em;
+    position: relative;
+    width: 100%;
+}
+
+.track-default:hover:after {
+    content: '...';
+    height: 2px;
+    width: 18px;
+    position: relative;
+    display: block;
+    left:40%;
+    top: -25%;
+    font-size: 20px;
+}
+
+.track-default:hover {
+    background-color: rgba(0,0,0, .1);
 }
 
 .track-default:hover {
@@ -12,27 +39,29 @@
 
 .track-name {
     width: 55%;
+    position: absolute;
+    left: 5%;
 }
 .track-duration {
-   width: 40%;
+    width: 40%;
+    position: absolute;
+    left: 95%;
 }
 
 .track-index {
     width:5%;
+    position: absolute;
+    left:1%;
 }
 
 .tracks-list {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .empty-list-message {
     color: #fff;
     font-size: 40px;
-}
-
-.active {
-    color: #fff;
-    border-bottom: solid 2px #1db954;
 }
 

@@ -7,7 +7,7 @@ const CoverArt = (props) => {
     return (
         <div className='cover-art-default'>
             <Link to={props.detailsNavigation}>
-                <div>
+                <div className="image-container">
                     <img className="cover-art-image" src={props.imageUrl} alt=""/>
                 </div>
             </Link>

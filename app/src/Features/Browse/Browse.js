@@ -1,6 +1,6 @@
 import React  from 'react';
 import { Switch, Route } from 'react-router-dom';
-import LocalNavbar from '../../components/common/LocalNavbar';
+import LocalNavbar from '../../components/common/LocalNavbar/LocalNavbar';
 import FeaturedPlaylist from './components/FeaturedPlaylists';
 import Genres from './components/Genres';
 import NewReleases from './components/NewReleases';

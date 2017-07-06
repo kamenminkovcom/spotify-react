@@ -6,7 +6,7 @@ import SearchInput from './components/SearchInput';
 import RecentSearchesList from './components/RecentSearchesList';
 import * as actions from './actions/search';
 import searchResultsPresenter from '../../components/HOC/searchResultsPresenter';
-import LocalNavbar from '../../components/common/LocalNavbar';
+import LocalNavbar from '../../components/common/LocalNavbar/LocalNavbar';
 import Utils from '../../utils/utils';
 import search from './search.css';
 

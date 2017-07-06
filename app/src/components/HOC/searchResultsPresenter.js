@@ -28,7 +28,7 @@ function searchResultsPresenter(type, context) {
                     );
                 case 'tracks':
                     return(
-                        <div>
+                        <div className="tracks-result">
                             <Tracks tracks={context.search[type]}/>
                         </div>
                     );

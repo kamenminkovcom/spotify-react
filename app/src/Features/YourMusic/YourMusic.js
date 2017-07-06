@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import LocalNavbar from '../../components/common/LocalNavbar';
+import LocalNavbar from '../../components/common/LocalNavbar/LocalNavbar';
 import UserPlaylists from './components/UserPlaylists.js';
 import UserSavedAlbums from './components/UserSavedAlbums.js';
 import UserFollowArtists from './components/UserFollowArtists.js';
