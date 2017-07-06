@@ -14,7 +14,7 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          active: 'playlist'
+            active: 'playlist'
         };
         this.bindEventHandlers();
     }
@@ -24,6 +24,7 @@ class Search extends React.Component {
         this.callSearch = this.callSearch.bind(this);
         this.searchDifferentType = this.searchDifferentType.bind(this);
         this.recentSearchEvent = this.recentSearchEvent.bind(this);
+        this.changeActive = this.changeActive.bind(this);
     }
 
     componentWillUnmount() {
@@ -51,11 +52,15 @@ class Search extends React.Component {
     }
 
     searchDifferentType(event) {
-        const active =  event.target.attributes[0].value;
-        this.setState({active: active});
+        this.changeActive(event);
         const type = this.props.match.params.id;
         this.props.actions.setSearchType(type);
-        this.props.actions.makeRequest(type, this.props.search.searchTerm);
+        this.search(this.props.search.searchTerm);
+    }
+
+    changeActive(event) {
+        const active =  event.target.attributes[0].value;
+        this.setState({active: active});
     }
 
     recentSearchEvent(event) {

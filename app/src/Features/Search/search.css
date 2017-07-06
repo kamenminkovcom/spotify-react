@@ -20,12 +20,12 @@
     font-weight: 700;
     font-size: 62px;
     line-height: 1.2;
-    text-shadow: 0 0 0 #fff;
+    text-shadow: 0 0 0 #a0a0a0;
     -webkit-text-fill-color: transparent;
 }
 
-input::placeholder {
-    color: #a0a0a0;
+.search-input:focus {
+    text-shadow: 0 0 0 #fff;
 }
 
 h4 {
