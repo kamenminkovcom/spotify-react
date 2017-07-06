@@ -13,6 +13,9 @@ import search from './search.css';
 class Search extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+          active: 'playlist'
+        };
         this.bindEventHandlers();
     }
 
@@ -47,7 +50,9 @@ class Search extends React.Component {
         }
     }
 
-    searchDifferentType() {
+    searchDifferentType(event) {
+        const active =  event.target.attributes[0].value;
+        this.setState({active: active});
         const type = this.props.match.params.id;
         this.props.actions.setSearchType(type);
         this.props.actions.makeRequest(type, this.props.search.searchTerm);
@@ -78,7 +83,7 @@ class Search extends React.Component {
                 <div className="search-default">
                     <SearchInput value={this.props.search.searchTerm} handleChange={this.callSearch}></SearchInput>
                     <LocalNavbar roles={['playlist', 'album', 'artist', 'track']} componentType={'search'}
-                                 clickHandler={this.searchDifferentType}/>
+                                 active={this.state.active} clickHandler={this.searchDifferentType}/>
                     <Switch>
                         <Route path="/search/playlist" render={function () {
                             DataWrapper = searchResultsPresenter('playlists', this.props);

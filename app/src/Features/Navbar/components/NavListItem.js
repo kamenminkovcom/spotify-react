@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 import navbar from '../navbar.css';
 
 
-let NavListItem = (props) => {
+let NavListItem = ({navigation, role, active}) => {
+    let endPoint = navigation.split('/')[1];
     return(
-        <Link to={props.navigation} className="link-item">{props.role}</Link>
+        <Link to={navigation} className={active === endPoint ? 'link-item active-navbar' : 'link-item'} >{role}</Link>
     )
-}
+};
+
+NavListItem.propTypes = {
+    navigation: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    active: PropTypes.string
+};
 
 export default NavListItem;

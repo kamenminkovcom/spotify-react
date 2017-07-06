@@ -2,12 +2,12 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-let LocalNavbar = ({roles, componentType, clickHandler}) => {
+let LocalNavbar = ({roles, componentType, clickHandler, active}) => {
     return(
         <ul className="local-navbar">
-            {roles.map(r =>  {
+            {roles.map((r, i) =>  {
                 let urlSegment = r.split(/\s+/).join('');
-                return <li key={r}><Link to={`/${componentType}/${urlSegment}`} onClick={clickHandler}>{r}</Link></li>
+                return <li className={active == urlSegment ? 'active' : 'passive'} key={i}><Link to={`/${componentType}/${urlSegment}`} onClick={clickHandler} value={r}>{r}</Link></li>
             })}
         </ul>
     )

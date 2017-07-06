@@ -65,6 +65,10 @@
     width: 100%;
 }
 
+.active-navbar {
+    color: #1db954;
+}
+
 .navbar {
     padding: 24px 24px 95px;
     height: 100vh;
