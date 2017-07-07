@@ -1,28 +1,33 @@
 .account-page {
     height: 70vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .logout-btn {
-    border-radius: 500px;
-    border: solid 2px #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    width: 100px;
 }
 
 .logout-link {
-    color: #fff;
+    color: #9a9a9a;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 20px;
+    border-radius: 500px;
+    border: solid 2px #9a9a9a;
+    min-width: 240px;
+    text-align: center;
+    margin-top: 50px
 }
 
 .logout-link:hover {
-    color: #9a9a9a;
+    color: #fff;
+    border: solid 3px #fff;
+
 }
 
+.account-image {
+    margin-top: 30px;
+    max-width: 100px;
+    max-height: 100px;
+}

@@ -19,13 +19,12 @@ class Account extends React.Component {
     }
 
     render() {
-       return (
-           <div className="account-page">
-               <div className="logout-btn">
-                   <Link to={'/login'} onClick={this.logout} className="logout-link">Logout</Link>
-               </div>
-           </div>
-       )
+        return (
+            <div className="account-page">
+                <img className="account-image" src="http://webmii.com/images/user%20white.png" alt=""/>
+                <Link to={'/login'} onClick={this.logout} className="logout-link">Log out</Link>
+            </div>
+        )
     }
 }
 
