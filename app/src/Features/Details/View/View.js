@@ -11,8 +11,13 @@ class View extends React.Component {
     }
 
     componentWillMount() {
+        document.body.className = 'skin-color-theme'
         let id = this.props.match.params.id;
         this.props.actions.getPlaylists(id);
+    }
+
+    componentWillUnmount() {
+        document.body.className = '';
     }
 
     render() {

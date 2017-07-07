@@ -13,10 +13,12 @@ class UserProfile extends React.Component {
     }
 
     componentWillUnmount() {
+        document.body.className = '';
         this.props.actions.clearProfile();
     }
 
     componentWillMount() {
+        document.body.className = 'green-theme';
         let userId = this.props.match.params.id;
         this.props.actions.getUserProfileData(userId);
     }

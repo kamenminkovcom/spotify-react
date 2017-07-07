@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Login from './Features/Login/Login';
 import Browse from './Features/Browse/Browse';
 import Search from './Features/Search/Search';
@@ -17,6 +17,11 @@ import layout from './layout.css';
 const Layout = () => (
     <main className='layout'>
         <Switch>
+            <Route exact path='/' render={() => (
+                localStorage.hasOwnProperty('userId') ?
+                    (<Redirect to='/your-music/playlists'/>) :
+                    (<Redirect to='/login'/>)
+            )}/>
             <Route path='/login' exact component={Login} />
             <Route path='/callbackSpotify' component={CallbackSpotify} />
             <PrivateRoute path='/browse' component={Browse}/>

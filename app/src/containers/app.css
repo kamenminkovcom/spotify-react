@@ -12,3 +12,30 @@ body {
     background-size: cover;
     overflow-x: hidden;
 }
+.red-theme {
+    background-image: linear-gradient(rgb(105, 37, 37), rgb(11, 4, 4) 85%);
+}
+
+.dark-theme {
+    background-image: linear-gradient(rgb(18, 18, 18), rgb(7, 7, 7) 85%);
+}
+
+.green-theme {
+    background-image: linear-gradient(rgb(57, 90, 95), rgb(5, 9, 9) 85%);
+}
+
+.brown-theme {
+    background-image: linear-gradient(rgb(129, 61, 24), rgb(12, 6, 2) 85%);
+}
+
+.gray-theme {
+    background-image: linear-gradient(rgb(86, 80, 67), rgb(8, 8, 6) 85%);
+}
+
+.skin-color-theme {
+    background-image: linear-gradient(rgb(102, 73, 50), rgb(10, 7, 5) 85%);
+}
+
+.light-gray-theme {
+    background-image: linear-gradient(rgb(77, 75, 76), rgb(7, 7, 7) 85%);
+}

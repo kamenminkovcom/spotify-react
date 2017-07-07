@@ -13,10 +13,12 @@ class AlbumPage extends React.Component {
     }
 
     componentWillUnmount() {
+        document.body.className = '';
         this.props.actions.clearAlbum();
     }
 
     componentWillMount() {
+        document.body.className = 'light-gray-theme';
         let albumId = this.props.match.params.id;
         this.props.actions.getAlbum(albumId);
     }

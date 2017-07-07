@@ -27,7 +27,12 @@ class Search extends React.Component {
         this.changeActive = this.changeActive.bind(this);
     }
 
+    componentWillMount() {
+        document.body.className = 'dark-theme';
+    }
+
     componentWillUnmount() {
+        document.body.className = '';
         this.props.actions.clearSearchResults();
     }
 

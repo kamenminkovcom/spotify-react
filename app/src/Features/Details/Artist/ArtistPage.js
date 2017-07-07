@@ -12,10 +12,12 @@ class ArtistPage extends React.Component {
     }
 
     componentWillUnmount() {
+        document.body.className = '';
         this.props.actions.clearArtist();
     }
 
     componentWillMount() {
+        document.body.classList = 'gray-theme';
         let artistId = this.props.match.params.id;
         this.props.actions.getArtistAlbums(artistId);
     }

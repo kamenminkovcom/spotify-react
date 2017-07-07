@@ -10,8 +10,6 @@ import App from './containers/App';
 const store = configureStore();
 const history = syncHistoryWithStore(createBrowserHistory(), store);
 
-//store.dispatch(loadAlbums([{name: 'AAA', username: 'Kamen'}, {name: 'BBB', username: 'Nemak'},{name: 'CCC', username: 'Sashka Vaseva'}]));
-
 ReactDOM.render(
     <Provider store={store} history={history}>
         <BrowserRouter>

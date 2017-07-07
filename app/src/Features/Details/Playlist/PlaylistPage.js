@@ -15,10 +15,12 @@ class PlaylistPage extends React.Component {
     }
 
     componentWillUnmount() {
+        document.body.className = '';
         this.props.actions.clearPlaylist();
     }
 
     componentWillMount() {
+        document.body.className = 'brown-theme';
         let playlistId = this.props.match.params.id;
         let username = this.props.match.params.username;
         this.props.actions.getPlaylist(playlistId, username);
